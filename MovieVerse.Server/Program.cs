@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using MovieVerse.Server.Data;
+using MovieVerse.Server.Repositories;
+using MovieVerse.Server.Repositories.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +16,17 @@ builder.Services.AddDbContext<MovieVerseServerContext>(options =>
         new MySqlServerVersion(new Version(8, 0, 42))
     )
 );
+
+builder.Services.AddScoped<IActorRepository, ActorRepository>();
+builder.Services.AddScoped<IAwardRepository, AwardRepository>();
+builder.Services.AddScoped<ICastRepository, CastRepository>();
+builder.Services.AddScoped<IDirectorRepository, DirectorRepository>();
+builder.Services.AddScoped<IEpisodeRepository, EpisodeRepository>();
+builder.Services.AddScoped<IGenreRepository, GenreRepository>();
+builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+builder.Services.AddScoped<ISeriesRepository, SeriesRepository>();
+builder.Services.AddScoped<IStudioRepository, StudioRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

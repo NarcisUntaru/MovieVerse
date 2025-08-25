@@ -1,9 +1,20 @@
+using Microsoft.EntityFrameworkCore;
+using MovieVerse.Server.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+var password = builder.Configuration["DbPassword"];
+var connectionString = $"server=localhost;port=3306;database=MovieVerseDb;user=root;password={password}";
+
+builder.Services.AddDbContext<MovieVerseServerContext>(options =>
+    options.UseMySql(
+        connectionString,
+        new MySqlServerVersion(new Version(8, 0, 42))
+    )
+);
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -12,7 +23,6 @@ var app = builder.Build();
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

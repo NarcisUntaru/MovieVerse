@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MovieVerse.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8a1e871e80b4f86f3de19130306086ab25a17fd8")]
 [assembly: System.Reflection.AssemblyProductAttribute("MovieVerse.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MovieVerse.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

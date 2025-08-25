@@ -1,0 +1,10 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:52380",
+"RedirectUrl": "",
+"LaunchCommand": "npm run dev",
+"WorkingDirectory": "C:\\Users\\narci\\Documents\\Projects\\MovieVerse\\MovieVerse.Server\\..\\movieverse.client",
+"MaxTimeoutInSeconds": "120",
+"KeepRunning": "false"
+}
+}

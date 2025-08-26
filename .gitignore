@@ -3,3 +3,5 @@
 ################################################################################
 
 /.vs
+/MovieVerse.Server/obj
+/MovieVerse.Server/bin/Debug/net8.0
